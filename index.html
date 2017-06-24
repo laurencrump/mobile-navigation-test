@@ -35,25 +35,16 @@
         </div>
         
         <div class="drawer">
-            <div class="search-container">
-                <a href="" class="search-toggle">search toggle</a>
-                <div class="siteSearch">
-                    <label for="search">Search</label>
-                    <input type="text" id="search" name="search" placeholder="Enter search terms" class="siteSearchInput">
-                    <input type="submit" value="Search" class="siteSearchSubmit">
-                </div> <!-- /.siteSearch -->
-            </div>
             <div class="container">
                 <a href="" class="menuClose collapse"><span>collapse</span></a>
                 <h4 class="visuallyhidden">Navigation</h4>
 
                 <div class="mainNav-container">
                     <div class="mainNavigation menu-nav">
-                        <a href="/" class="fixed-logo">fixed logo</a>
                         <ul>
-                            <li class="active-trail"><a href="">Nav Level 1</a>
+                            <li><a href="">Nav Level 1</a>
                                 <ul>
-                                    <li class="active-trail"><a href="" class="is-active">Nav Level 2</a>
+                                    <li><a href="">Nav Level 2</a>
                                         <ul>
                                             <li><a href="">Nav Level 3</a></li>
                                             <li><a href="">Nav Level 3</a></li>
@@ -154,9 +145,25 @@
     </nav> <!-- / navigation -->
 </div>
 
-<section class="mainContent" id="mainContent">
-    <div class="wrapper">
-        <p>content area</p>
+<section class="mainContent hasSidebar" id="mainContent">
+    <div class="main-content-container">
+        <div class="content-wrapper">
+            <div class="mainColumn">
+                <p>content area</p>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="sidebar-container">
+                <nav class="sectionNavigation sidebar-block" role="navigation" aria-label="Secondary">
+                    <h2><a href="">Nav Level 2</a></h2>
+                    <ul>
+                        <li><a href="">Nav Level 3</a></li>
+                        <li><a href="">Nav Level 3</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div> <!-- /.sidebar -->
     </div>
 </section>
 
