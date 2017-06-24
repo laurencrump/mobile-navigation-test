@@ -1,0 +1,155 @@
+/* ==========================================================================
+	layout
+========================================================================== */
+
+body {
+	min-height: 100vh;
+	overflow-x: hidden;
+	overflow-y: auto;
+
+	&:after {
+		display: none;
+		content: 'mq-small';
+
+		@include breakpoint($medium) {
+			content: 'mq-medium';
+		}
+		@include breakpoint($large) {
+			content: 'mq-large';
+		}
+	}
+}
+
+.layout-container {
+	overflow-x: hidden;
+
+	@include breakpoint($medium) {
+		overflow: visible;
+	}
+}
+
+.wrapper {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 8px 30px;
+
+	@include breakpoint($medium) {
+		padding: 14px 30px;
+	}
+
+	@include breakpoint($large) {
+		padding: 14px 24px;
+	}
+}
+
+.mainContent {
+	margin: 50px auto 0;
+
+	@include breakpoint($medium) {
+		margin-top: 63px;
+	}
+
+	@include breakpoint($large) {
+		margin: 0 auto;
+	}
+
+	&.hasSidebar {
+		#block-tabs {
+			@include container-space;
+		}
+
+		.messageContainer {
+			@include container-space;
+		}
+
+		.content-wrapper {
+			@include container-space;
+		}
+
+		.pageHeader {
+			&.has-image {
+				@include breakpoint($large) {
+					margin-bottom: 93px;
+				}
+
+				@include breakpoint($xlarge) {
+					margin-bottom: 112px;
+				}
+
+				@include breakpoint($xxxxlarge) {
+					margin-bottom: 120px;
+				}
+
+				@include breakpoint($superlarge) {
+					margin-bottom: 130px;
+				}
+			}
+		}
+
+		.pageHeader-wrapper {
+			@include container-space;
+		}
+
+		.contact-container {
+			form {
+				@include breakpoint($large) {
+					width: 59%;
+				}
+
+				@include breakpoint($xxlarge) {
+					width: 61%;
+				}
+
+				@include breakpoint($xxxxlarge) {
+					width: 64%;
+				}
+			}
+
+			.contact-quick-info {
+				@include breakpoint($large) {
+					width: 39%;
+					max-width: 300px;
+				}
+
+				h3 {
+					@include breakpoint($large) {
+						padding-right: 30px;
+					}
+
+					@include breakpoint($xlarge) {
+						padding-right: 42px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.main-content-container {
+	max-width: 1600px;
+	position: relative;
+	margin: 0 auto;
+}
+
+.content-wrapper {
+	max-width: 1000px;
+	margin: 0 auto;
+	position: relative;
+	padding: 20px 30px;
+	@include clearfix;
+
+	@include breakpoint($large) {
+		padding: 30px 24px;
+	}
+
+	@include breakpoint($xlarge) {
+		padding: 40px 24px 30px;
+	}
+}
+
+.mainColumn {
+	margin: 0 auto;
+	max-width: 800px;
+	@include clearfix;
+}
+

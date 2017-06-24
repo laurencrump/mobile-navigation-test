@@ -1,0 +1,134 @@
+/* ==========================================================================
+	sidebar
+========================================================================== */
+
+.sidebar {
+	display: none;
+
+	@include breakpoint($large) {
+		display: block;
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		width: 250px;
+	}
+
+	.sidebar-container {
+		position: relative;
+		height: 100%;
+		margin-bottom: 1em;
+	}
+}
+
+.sidebar-block {
+	border: 1px solid #b3b3b3;
+	background: #fff;
+	padding: 20px;
+	margin-bottom: 1.5em;
+	@include font-smoothing;
+}
+
+.sectionNavigation {
+	font-weight: 700;
+
+	h2 {
+		margin: 0 0 0.5em;
+		font-size: 2.4rem;
+		border-bottom: 1px solid $black;
+		line-height: 28px;
+
+		a {
+			display: block;
+			color: $blue;
+			text-decoration: none;
+			padding: 0 8px 5px;
+			background: transparent;
+			transition: color 0.3s ease;
+
+			&:hover {
+				color: $black;
+			}
+		}
+	}
+
+	ul {
+		margin: 0;
+		padding: 0 0 0 24px;
+		list-style-type: none;
+	}
+
+	li {
+		position: relative;
+
+		&.active-trail {
+			ul {
+				display: block;
+			}
+
+			a.section-plus {
+				transform: rotate(90deg);
+			}
+		}
+
+		ul {
+			display: none;
+			padding-left: 20px;
+		}
+	}
+
+	a {
+		display: inline-block;
+		padding: 2px 0;
+		color: $black;
+		text-decoration: none;
+		background-image: linear-gradient(to bottom, transparent 93%, $blue 93%);
+		background-repeat: no-repeat;
+		background-position: right 0;
+		background-size: 0% 100%;
+		transition: background-size 0.3s ease;
+
+		&.is-active {
+			background-size: 100% 100%;
+			background-position: left 0;
+		}
+
+		&:hover {
+			background-size: 100% 100%;
+			background-position: left 0;
+		}
+
+		&.section-plus {
+			padding: 0;
+			position: absolute;
+			left: -25px;
+			width: 20px;
+			height: 20px;
+			transition: all 0.3s ease;
+			text-indent: -9999px;
+			background: transparent;
+
+			&:after {
+				content: '';
+				//font-family: 'FontAwesome';
+				color: inherit;
+				position: absolute;
+				top: 2px;
+				left: 12px;
+				text-indent: 0;
+				display: block;
+			}
+
+			&:hover {
+				opacity: 0.6;
+			}
+		}
+
+		&.section-plus-open {
+			transform: rotate(90deg);
+
+			&:after {
+				top: 0;
+			}
+		}
+	}
+}

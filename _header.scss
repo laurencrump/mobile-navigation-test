@@ -1,0 +1,134 @@
+/* ==========================================================================
+	header
+========================================================================== */
+
+.siteHeader {
+	position: fixed;
+	width: 100%;
+	background: $black;
+	z-index: 22;
+	top: 0;
+
+	@include breakpoint($large) {
+		position: static;
+		background: $white;
+	}
+
+	.header-container {
+		position: relative;
+
+		@include breakpoint($large) {
+			background: $white;
+			z-index: 22;
+		}
+	}
+
+	.wrapper {
+		@include clearfix;
+	}
+
+	.headerNavigation {
+		display: none;
+
+		@include breakpoint($large) {
+			display: block;
+			margin: 0 auto;
+			position: relative;
+			float: right;
+			width: 44%;
+		}
+
+		ul {
+			@include clearfix;
+
+			@include breakpoint($large) {
+				text-align: right;
+			}
+		}
+
+		li {
+			display: inline-block;
+			margin: 0 5px;
+			width: 52%;
+			text-align: left;
+
+			&:nth-of-type(even) {
+				margin-right: 0;
+				width: 20%;
+			}
+		}
+
+		a {
+			color: $black;
+
+			&:hover {
+				color: $blue;
+			}
+		}
+	}
+}
+
+.MenuOpen {
+	overflow: hidden;
+
+	@include breakpoint($large) {
+		overflow: visible;
+	}
+}
+
+.menuToggle {
+	width: 28px;
+	height: 28px;
+	display: inline-block;
+	vertical-align: top;
+	position: absolute;
+	top: 10px;
+	right: 16px;
+	text-decoration: none;
+	color: $white;
+	@include font-smoothing;
+
+	@include breakpoint($medium) {
+		top: 20px;
+	}
+
+	@include breakpoint($large) {
+		display: none;
+	}
+
+	&:hover {
+		color: $white;
+	}
+
+	&:focus {
+		outline: transparent;
+		text-decoration: none;
+	}
+
+	p {
+		font-size: 0.8rem;
+		font-weight: 700;
+		letter-spacing: 1px;
+		text-align: center;
+		text-transform: uppercase;
+		margin: 0;
+	}
+
+	span {
+		display: block;
+		position: absolute;
+		height: 4px;
+		width: 100%;
+		background: $white;
+		opacity: 1;
+		left: 0;
+		top: 15px;
+		transform: rotate(0deg);
+		transition: all 0.25s ease-in-out;
+
+		&:nth-of-type(2) {
+			top: 25px;
+		}
+	}
+}
+
